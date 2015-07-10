@@ -37,6 +37,8 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
+  gem 'rspec-rails', '~> 3.0'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -47,6 +49,15 @@ group :development, :test do
   gem 'spring'
 
   gem 'faker'
+
+  gem 'awesome_print'
+
+  gem 'pry'
+  gem 'pry-rails'
+
+ # Required to use Chrome's RailsPanel extension
+  gem 'meta_request'
+
 end
 
 group :production do
