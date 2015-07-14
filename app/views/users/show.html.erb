@@ -1,0 +1,17 @@
+<h1 class="text-muted">User Profile</h1>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1> <%= "#{@user.name}" %></h1>
+
+      <div class="col-lg-6">
+        <h4> <%= "#{@user.email}" %> </h4>
+        <h5> <%= "Signed in #{time_ago_in_words(@user.current_sign_in_at)} ago" %> </h5>
+        <h5> <%= "Signed in #{pluralize(@user.sign_in_count, 'time')}" %> </h5>
+      </div>
+
+      <%# TODO: when we have our todo list, call out the # of active items on %>
+      <%# that list. Link to the todo list page. %>
+
+  </div>
+</div>
