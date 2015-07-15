@@ -1,0 +1,6 @@
+<%= content_tag :div, class: 'media', id:"item-#{item.id}" do %>
+  <div class="media-body">
+    <p><%= item.name %> <%= link_to "", user_items_path(item.user), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></p>
+    <%# show the days left value for this todo item %>
+  </div>
+<% end %>

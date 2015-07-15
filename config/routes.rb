@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
 
+  get 'items/create'
+
   # You can have the root of your site routed with "root"
   root 'users#show'
 
   get '/hello' => 'application#hello', as: :hello
 
   devise_for :users
+
+  resources :users, only: [:show] do
+    resources :items, only: [:create, :destroy]
+  end
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
