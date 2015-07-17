@@ -4,20 +4,17 @@ class ItemsController < ApplicationController
     @user = current_user
     @item = current_user.items.build(item_params)
 
-    @new_item = Item.new
-
-    # @authorize @item
-
     if @item.save
       flash[:notice] = "Todo item saved."
       redirect_to root_path
+      return
     else
       flash[:error] = "Unable to save Todo item - pleas try again"
-    end
 
-    respond_to do |format|
-      format.html
-      format.js
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 
@@ -28,14 +25,15 @@ class ItemsController < ApplicationController
     # authorize @item
 
     if @item.destroy
-      flash[:notice] = "Item was completed."
+      flash[:notice] = "Item was deleted."
+      redirect_to root_path
+      return
     else
-      flash[:error] = "Item couldn't be completed."
-    end
-
-    respond_to do |format|
-      format.html
-      format.js
+      flash[:error] = "Item couldn't be deleted."
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 

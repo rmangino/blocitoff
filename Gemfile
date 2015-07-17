@@ -59,6 +59,7 @@ group :development, :test do
 
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-nav'
 
  # Required to use Chrome's RailsPanel extension
   gem 'meta_request'
