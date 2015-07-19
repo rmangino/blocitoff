@@ -1,0 +1,10 @@
+<% if @item.destroyed? %>
+  $('#item-' +<%= @item.id %>).fadeOut(500, 'linear');
+  <% if @item.user.items.empty? %>
+    $('.js-items-count').html("Nothing To Do!");
+  <% else %>
+    $('.js-items-count').html("<%= pluralize(@item.user.items.count, 'Thing') %> To Do");
+  <% end %>
+<% else %>
+  $('#item-' +<%= @item.id %>).prepend("<div class='alert alert-danger'><%= flash[:error] %></div>");
+<% end %>

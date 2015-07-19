@@ -26,14 +26,13 @@ class ItemsController < ApplicationController
 
     if @item.destroy
       flash[:notice] = "Item was deleted."
-      redirect_to root_path
-      return
     else
       flash[:error] = "Item couldn't be deleted."
-      respond_to do |format|
-        format.html
-        format.js
-      end
+    end
+
+    respond_to do |format|
+     format.html
+     format.js
     end
   end
 

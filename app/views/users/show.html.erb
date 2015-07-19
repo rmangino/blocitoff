@@ -10,13 +10,18 @@
     </div>
   </div>
 
-  <h2>Todos</h2>
+  <% if @items.empty? %>
+    <h2>Nothing To Do!</h2>
+  <% else %>
+    <h2>
+      <div class='js-items-count'><%= pluralize(@items.count, 'Thing') %> To Do</div>
+    </h2>
+  <% end %>
+
 
   <div class="js-items">
     <% if @items && !@items.empty? %>
       <%= render partial: 'items/item', collection: @items %>
-    <% else %>
-      Nothing to do...
     <% end %>
   </div>
 

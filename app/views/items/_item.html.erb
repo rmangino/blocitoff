@@ -1,6 +1,7 @@
 <%= content_tag :div, class: 'media', id:"item-#{item.id}" do %>
   <div class="media-body">
-    <%= link_to "", user_item_path(item.user.id, item.id), method: :delete, class: 'todo_item_checkmark glyphicon glyphicon-ok' %>
+    <%= link_to "", user_item_path(item.user.id, item.id), method: :delete, remote: true,
+        class: 'todo_item_checkmark glyphicon glyphicon-ok' %>
     <%= item.name %>
     <%# show the days left value for this todo item %>
   </div>
