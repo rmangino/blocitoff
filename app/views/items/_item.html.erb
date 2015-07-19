@@ -2,7 +2,7 @@
   <div class="media-body">
     <%= link_to "", user_item_path(item.user.id, item.id), method: :delete, remote: true,
         class: 'todo_item_checkmark glyphicon glyphicon-ok' %>
-    <%= item.name %>
+    <%= "#{item.name} - (#{item.days_left} days left)" %>
     <%# show the days left value for this todo item %>
   </div>
 <% end %>
