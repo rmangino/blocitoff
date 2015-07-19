@@ -26,6 +26,8 @@ gem 'devise'
 
 gem 'figaro', '~> 1.1.1'
 
+gem 'whenever', '~> 0.9.4'
+
 # Provides attr_accessible
 #gem 'protected_attributes'
 
